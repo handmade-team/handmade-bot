@@ -1,0 +1,11 @@
+services:
+  bot:
+    image: ghcr.io/handmade-team/handmade-bot:latest
+    container_name: handmade-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./bot.db:/app/bot.db
+    environment:
+      - NODE_ENV=production
